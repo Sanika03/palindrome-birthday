@@ -52,17 +52,3 @@ function checkIsPalindromeForAllDateFormats(date){
     }
     return flag;
 }
-
-
-
-
-
-
-
-
-// var date = {
-//     day: 3,
-//     month: 5,
-//     year: 2005
-// }
-// console.log(getAllDateFromats(date));
