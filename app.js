@@ -66,7 +66,7 @@ function isLeapYear(year){
     return false;
 }
 
-function getNextDay(date){
+function getNextDate(date){
     var day = date.day + 1;
     var month = date.month;
     var year = date.year;
@@ -108,7 +108,7 @@ function getNextDay(date){
 
 function getNextPalindrome(date){
     var counter = 0;
-    var nextDate = getNextDay(date);
+    var nextDate = getNextDate(date);
 
     while(1){
         counter++;
@@ -116,7 +116,7 @@ function getNextPalindrome(date){
         if(isPalindrome){
             break;
         }
-        nextDate = getNextDay(nextDate);
+        nextDate = getNextDate(nextDate);
     }
     return [counter, nextDate];
 }
@@ -144,7 +144,7 @@ function clickHandler(e){
         }
         else{
             var [counter, nextDate] = getNextPalindrome(date);
-            outputDiv.innerText = `The next palindrome date is ${nextDay.day}-${nextDay.month}-${nextDay.year}, you missed it by ${counter} days! 😔`;
+            outputDiv.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days! 😔`;
         }
     }
 }
