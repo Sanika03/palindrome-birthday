@@ -26,8 +26,8 @@ function convertDateToString(date){
     return dateStr;
 }
 
-function getAllDateFromats(date){
-    convertDateToString(date);
+function getAllDateFormats(date){
+    var dateStr = convertDateToString(date);
 
     var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
     var mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
