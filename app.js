@@ -52,3 +52,71 @@ function checkIsPalindromeForAllDateFormats(date){
     }
     return flag;
 }
+
+function isLeapYear(year){
+    if(year % 400 == 0){
+        return true;
+    }
+    if(year % 4 == 0){
+        return true
+    }
+    if(year % 100 == 0){
+        return false;
+    }
+    return false;
+}
+
+function getNextDay(date){
+    var day = date.day + 1;
+    var month = date.month;
+    var year = date.year;
+
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if(month != 2){
+        if(day > daysInMonth[month - 1]){
+            day = 1;
+            month++;
+        }
+        if(month > 12){
+            month = 1;
+            year++;
+        }
+    }
+    else{
+        if(isLeapYear(year)){
+            if(day > 29){
+                day = 1;
+                month++
+            }
+        }
+        else {
+            if(day > 28){
+                day = 1;
+                month++;
+            }
+        }
+    }
+
+    return {
+        day : day,
+        month : month,
+        year : year
+    };
+
+}
+
+function getNextPalindrome(date){
+    var counter = 0;
+    var nextDate = getNextDay(date);
+
+    while(1){
+        counter++;
+        var isPalindrome = checkIsPalindromeForAllDateFormats(nextDate);
+        if(isPalindrome){
+            break;
+        }
+        nextDate = getNextDay(nextDate);
+    }
+    return [counter, nextDate];
+}
