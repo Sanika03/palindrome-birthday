@@ -120,3 +120,33 @@ function getNextPalindrome(date){
     }
     return [counter, nextDate];
 }
+
+var dateInput = document.querySelector("#date-input");
+var checkBtn = document.querySelector("#check-btn");
+var outputDiv = document.querySelector("#output-div")
+
+function clickHandler(e){
+    var bdayStr = dateInput.value;
+
+    if(dateInput.value != ""){
+        var dateList = bdayStr.split("-");
+        
+        var date = {
+            day: Number(dateList[2]),
+            month: Number(dateList[1]),
+            year: Number(dateList[0])
+        };
+
+        var isPalindrome = checkIsPalindromeForAllDateFormats(date);
+
+        if(isPalindrome){
+            outputDiv.innerText = "Yay, your birthday is a Palindrome! 🥳"
+        }
+        else{
+            var [counter, nextDate] = getNextPalindrome(date);
+            outputDiv.innerText = `The next palindrome date is ${nextDay.day}-${nextDay.month}-${nextDay.year}, you missed it by ${counter} days! 😔`;
+        }
+    }
+}
+
+checkBtn.addEventListener("click", clickHandler);
