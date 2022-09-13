@@ -38,3 +38,31 @@ function getAllDateFormats(date){
 
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
 }
+
+
+function checkIsPalindromeForAllDateFormats(date){
+    var allDateFormats = getAllDateFormats(date);
+    var flag = false;
+
+    for(var i = 0; i < allDateFormats.length; i++){
+        if(isPalindrome(allDateFormats[i])){
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+}
+
+
+
+
+
+
+
+
+// var date = {
+//     day: 3,
+//     month: 5,
+//     year: 2005
+// }
+// console.log(getAllDateFromats(date));
