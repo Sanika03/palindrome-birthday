@@ -6,7 +6,7 @@ An app which checks whether you birth date is palindrome or not.
 <h2>BUILT WITH </h2>
 HTML, CSS, Vanilla.js
 
-<h2>FEATUREs</h2>
+<h2>FEATURES</h2>
 <ul>
   <li>It checks if the given date is a palindrome or not.</li>
   <li>If date is not a palindrome it finds the next nearest palindrome birth date.</li>
