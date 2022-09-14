@@ -43,6 +43,11 @@ label {
     font-family: 'Montserrat', sans-serif;
 }
 
+#check-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 #output-div{
     margin-top: 2%;
     margin-bottom: 2%;
