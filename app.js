@@ -147,6 +147,9 @@ function clickHandler(e){
             outputDiv.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days! 😔`;
         }
     }
+    else{
+        outputDiv.innerText = "Please enter date";
+    }
 }
 
 checkBtn.addEventListener("click", clickHandler);
